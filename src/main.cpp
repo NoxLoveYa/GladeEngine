@@ -2,8 +2,11 @@
 #include "headers/Glade.hpp"
 
 int main() {
-    printf("Hello World!\n");
+    //init the engine
     glade::init();
+
+    //clean up
     delete glade::window;
+    
     return 0;
 }

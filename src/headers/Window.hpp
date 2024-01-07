@@ -13,6 +13,12 @@ namespace window {
         (void)window;
         glViewport(0, 0, width, height);
     }
+
+    static void processInput(GLFWwindow *window)
+    {
+        if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+            glfwSetWindowShouldClose(window, true);
+    }
 }
 
 class Window {
@@ -49,6 +55,8 @@ class Window {
         void run() {
             while(!glfwWindowShouldClose(window_))
             {
+                window::processInput(window_);
+                
                 glfwSwapBuffers(window_);
                 glfwPollEvents();    
             }
