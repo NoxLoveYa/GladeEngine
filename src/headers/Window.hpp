@@ -1,7 +1,16 @@
 #pragma once
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#ifdef _WIN32
+    #include <glad.h> // Include glad.h on Windows
+#else
+    #include <glad/glad.h> // Include glad/glad.h on other platforms
+#endif
+
+#ifdef _WIN32
+    #include <glfw3.h> // Include glad.h on Windows
+#else
+    #include <GLFW/glfw3.h> // Include glad/glad.h on other platforms
+#endif
 
 namespace window {
     static int WIN_WIDTH = 800;
