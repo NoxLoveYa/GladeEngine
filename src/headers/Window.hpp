@@ -7,6 +7,7 @@ namespace window {
     static int WIN_WIDTH = 800;
     static int WIN_HEIGHT = 600;
     static std::string WIN_TITLE = "GladeEngine";
+    static color::Color WIN_COLOR = {0.2f, 0.3f, 0.3f, 1.0f};
 
     static void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     {
@@ -55,10 +56,15 @@ class Window {
         void run() {
             while(!glfwWindowShouldClose(window_))
             {
+                //process
                 window::processInput(window_);
-                
+
+                //render
+                glClearColor(window::WIN_COLOR.r, window::WIN_COLOR.g, window::WIN_COLOR.b, window::WIN_COLOR.a);
+                glClear(GL_COLOR_BUFFER_BIT);
+
                 glfwSwapBuffers(window_);
-                glfwPollEvents();    
+                glfwPollEvents();
             }
         }
 

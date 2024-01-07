@@ -5,6 +5,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Color.hpp"
 #include "Window.hpp"
 
 namespace glade {
